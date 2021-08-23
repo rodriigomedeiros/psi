@@ -7,7 +7,9 @@ describe('Options handler method', () => {
   describe('getOptions method', () => {
     const defaultConfig = {
       nokey: true,
-      url: 'http://addyosmani.com'
+      url: 'http://addyosmani.com',
+      strategy: 'mobile',
+      toFile: false
     };
     it('should return strategy "mobile" if no strategy is passed', () => {
       const expectedOutput = {
@@ -22,6 +24,26 @@ describe('Options handler method', () => {
         strategy: 'desktop'
       };
       expect(getOptions('http://addyosmani.com', {strategy: 'desktop'})).to.eql(expectedOutput);
+    });
+    it('should return toFile "false" if is not specificied', () => {
+      const expectedOutput = {
+        ...defaultConfig
+      };
+      expect(getOptions('http://addyosmani.com')).to.eql(expectedOutput);
+    });
+    it('should return toFile "true" if is specificied', () => {
+      const expectedOutput = {
+        ...defaultConfig,
+        toFile: true
+      };
+      expect(getOptions('http://addyosmani.com', {toFile: true})).to.eql(expectedOutput);
+    });
+    it('should return "~/" as path to file', () => {
+      const expectedOutput = {
+        ...defaultConfig,
+        filePath: '~/'
+      };
+      expect(getOptions('http://addyosmani.com', {filePath: '~/'})).to.eql(expectedOutput);
     });
   });
 

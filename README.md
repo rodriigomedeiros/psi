@@ -72,6 +72,27 @@ Values: `mobile` `desktop`
 
 Strategy to use when analyzing the page.
 
+##### format
+
+Type: `string`<br>
+Default: `cli`<br>
+Values: `cli` `tap` `json`
+
+Report output format.
+
+##### toFile
+
+Type: `boolean`<br>
+Default: `false`
+
+Defines whether the report output will be in files. Only works if combined with Json format.
+
+##### filePath
+
+Type: `string`<br>
+
+Path to generated file. Only works if combined with toFile option.
+
 ##### locale
 
 Type: `string`<br>

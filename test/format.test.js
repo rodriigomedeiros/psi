@@ -3,7 +3,7 @@
 const {assert} = require('chai');
 const stripAnsi = require('strip-ansi');
 const output = require('../lib/output');
-const response = require('./fixtures/response');
+const response = require('./fixtures/response.json');
 
 describe('Formatting', () => {
   beforeEach(function () {
