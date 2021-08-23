@@ -13,6 +13,8 @@ const cli = meow(`
     --key        Google API Key. By default the free tier is used
     --strategy   Strategy to use when analyzing the page: mobile|desktop
     --format     Output format: cli|json|tap
+    --toFile     Output report in files. Only works if combined with Json format
+    --filePath   Path to generated file. Only works if combined with toFile option
     --locale     Locale results should be generated in
     --threshold  Threshold score to pass the PageSpeed test
     --links  Adds link with more info about opportunities
